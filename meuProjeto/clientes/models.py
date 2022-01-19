@@ -1,6 +1,13 @@
 from django.db import models
 
 # Create your models here.
+
+class Dependente(models.Model):
+    nome = models.CharField(max_length=150)
+
+    def __str__(self):
+        return self.nome
+
 class CPF(models.Model):
     cpf = models.CharField(max_length=11)
     data_ext = models.DateTimeField(auto_now=False)
@@ -15,6 +22,7 @@ class Cliente(models.Model):
     idade = models.IntegerField()
     email = models.EmailField()
     cpf = models.OneToOneField(CPF, on_delete=models.CASCADE, null=True, blank=True)
+    dependentes = models.ManyToManyField(Dependente, blank=True)
 
     def __str__(self):
         return self.nome
