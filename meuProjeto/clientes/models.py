@@ -1,6 +1,12 @@
 from django.db import models
 
 # Create your models here.
+class CPF(models.Model):
+    cpf = models.CharField(max_length=11)
+    data_ext = models.DateTimeField(auto_now=False)
+
+    def __str__(self):
+        return self.cpf
 
 class Cliente(models.Model):
     nome = models.CharField(max_length=120, blank=False, null=False)
@@ -8,6 +14,7 @@ class Cliente(models.Model):
     salario = models.DecimalField(max_digits=10, decimal_places=2)
     idade = models.IntegerField()
     email = models.EmailField()
+    cpf = models.OneToOneField(CPF, on_delete=models.CASCADE, null=True, blank=True)
 
     def __str__(self):
         return self.nome
@@ -19,3 +26,5 @@ class Telefone(models.Model):
 
     def __str__(self):
         return self.numero
+
+
