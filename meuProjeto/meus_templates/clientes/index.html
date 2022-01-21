@@ -1,13 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends "clientes/base.html" %}
+{% block main %}
     <h1>Clientes</h1>
     {% for cliente in clientes %}
         <p>nome = {{ cliente.nome }}, idade = {{ cliente.idade }}</p>
     {% endfor %}
-</body>
-</html>
+{% endblock %}
