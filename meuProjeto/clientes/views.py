@@ -3,7 +3,15 @@ from django.http import HttpResponse
 
 
 def clientes(request):
-    return HttpResponse("Pedro, Maria, Paula")
+    data = {
+        "clientes": [
+            {"nome": "Pedro", "idade": 25},
+            {"nome": "Filomena", "idade": 56},
+            {"nome": "Pororo", "idade": 41}
+        ]
+    }
+    return render(request, 'clientes/index.html', data)
+    # return HttpResponse("Pedro, Maria, Paula")
 
 
 def cliente_detalhe(request, id):

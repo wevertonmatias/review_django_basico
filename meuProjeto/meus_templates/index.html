@@ -5,7 +5,12 @@
     <title>Title</title>
 </head>
 <body>
-    <h1>Olá Mundo</h1>
-    <h3>{{ primeiro_nome }}</h3>
+    {% if sexo == "M" %}
+        <h1>Olá senhor {{ primeiro_nome }}</h1>
+    {% elif sexo == "F" %}
+        <h1>Olá senhora {{ primeiro_nome }}</h1>
+    {% else %}
+        <h1>Olá {{ primeiro_nome }}</h1>
+    {% endif %}
 </body>
 </html>

@@ -6,3 +6,6 @@
 .idea/**/usage.statistics.xml
 .idea/**/dictionaries
 .idea/**/shelf
+*.pyc
+meuProjeto/__pycache__/view.cpython-38.pyc
+../clientes/__pycache__/views.cpython-38.pyc
