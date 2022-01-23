@@ -23,6 +23,7 @@ class Cliente(models.Model):
     email = models.EmailField()
     cpf = models.OneToOneField(CPF, on_delete=models.CASCADE, null=True, blank=True)
     dependentes = models.ManyToManyField(Dependente, blank=True)
+    foto = models.ImageField(upload_to="clientes_fotos")
 
     def __str__(self):
         return self.nome
